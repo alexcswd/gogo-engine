@@ -16,14 +16,14 @@ func (move Move) String() string {
 }
 
 // NewMatch creates a new match
-func NewMatch(size int) Match {
+func NewMatch(size int, playerBlackName, playerWhiteName string) Match {
   result := Match{}
   result.ID = uuid.New()
   result.StartTime = time.Now()
   result.GameBoard = newBoard(size)
   result.TurnCount = 0
   result.GridSize = size
-  // result.PlayerBlack = playerBlackName
-  // result.PlayerWhite = playerWhiteName
+  result.PlayerBlack = playerBlackName
+  result.PlayerWhite = playerWhiteName
   return result
 }
